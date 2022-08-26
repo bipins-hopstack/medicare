@@ -1,0 +1,57 @@
+<section class="section-products">
+    <div class="container">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header">
+                                    <h3>Featured Product</h3>
+                                    <h2>Popular Products</h2>
+                            </div>
+                    </div>
+            </div>
+                        <div class="row">
+                                <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of products; let currentElementIndex='index+1'">
+
+                    
+                          
+                    <!-- Single Product -->
+                    
+                            <div id="product-{{currentElementIndex}}" class="single-product">
+                                    <div class="part-1">
+                                            <span class="new">new</span>
+                                            <ul>
+                                               
+                                                    
+                                            </ul>
+                                    </div>
+                                    <div class="part-2">
+                                        <table class="table">
+                                        
+                                            <tbody>
+                                              <tr>
+                                                <th scope="row">Product Name:</th>
+                                                <td>{{product.prodName}}</td></tr>
+                                                <tr>
+                                                <th scope="row">product Brand :</th>
+                                                <td>{{product.prodBrand}}</td></tr>
+                                                <tr>
+                                                <th scope="row">product Description :</th>
+                                                <td>{{product.prodDesc}}</td></tr>
+                                                <tr>
+                                                <th scope="row">product Price :</th>
+                                                <td>{{product.prodPrice}}</td>
+                                              </tr>
+                                              <tr><td>
+                                            <button type="button" class="btn btn-default btn-sm" (click)="buyitnow(product)">
+                                                <a  class="btn btn-info btn-sm">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span>Buy </a></button></td><td>
+                                           <button type="button" class="btn btn-default btn-sm" (click)="addtocart(product)">
+                                                <a  class="btn btn-info btn-sm">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a></button>
+                                               </td> </tr></tbody></table>
+                                    </div>
+                            </div>
+                
+          </div>              
+            </div>
+    </div>
+</section>

@@ -1,0 +1,65 @@
+<section class="section-products">
+    <div class="container">
+            <div class="row justify-content-center text-center">
+                    <div class="col-md-8 col-lg-6">
+                            <div class="header">
+                                    <h3>Manage products</h3>
+                            </div>
+                    </div>
+            </div>
+            <div><form [formGroup]="productForm">
+                <div class="col">Product Img </div><div class="col"><input formControlName="prodImg"></div>
+                            <div class="col">Product Brand</div><div class="col"><input formControlName="prodCategory"></div>
+                            <div class="col">Product Name</div><div class="col"><input formControlName="prodName"></div>
+                            <div class="col">Product Quantity</div><div class="col"><input formControlName="prodQuantity"></div>
+                            <div class="col">Product Price</div><div class="col"><input formControlName="prodPrice"></div>
+                            <div class="col">Product Description</div><div class="col"><input formControlName="prodDesc"></div>
+                            <div class="col">Product Available</div><div class="col"><input formControlName="prodAvail"></div>
+            <button class="btn btn-info" (click)="insertProduct()">
+                Insert product</button></form></div>
+                          <hr class="my-4">
+                    <!-- Single Product -->
+                    <div class="">
+                        <div class="row">
+                            <div class="col font-weight-bold p-4">Product Brand</div>
+                            <div class="col font-weight-bold p-4">Product Img</div>
+                            <div class="col font-weight-bold p-4">Product Name</div>
+                            <div class="col font-weight-bold p-4">Product Quantity</div>
+                            <div class="col font-weight-bold p-4"><p>     Product Price</p></div>
+                            <div class="col font-weight-bold p-4">Action</div>
+                        </div>
+                                              
+                         
+                        <div *ngFor="let product of products; let currentElementIndex='index+1'">
+                           
+                                    <div class="row">
+                                      <div class="col">
+                                        <img src="{{product.prodImg}}"
+                                        width="100" height="100" alt="{{product.prodName}}">
+                                      </div>
+
+                                       <div class="col">
+                                       <input  value="{{product.prodBrand}}" type="text" width="50"/>
+                                        
+                                       </div>
+                                       <div class="col">
+                                        <input value="{{product.prodName}}" type="text" />
+                                        </div>
+                                
+                                       <div class="col ">
+                                        <input  name="quantity" value="{{product.prodQuantity}}"  type="number"/>
+                                      </div>
+                  
+                                      <div class="col">
+                                        <input name="quantity" value="{{product.prodPrice}}"  type="number"/>
+                                    </div>
+                                    
+                                    <div class="col">                                 
+                                      <button class=" btn btn-success" type="submit">Update</button>
+                                      <button class="btn btn-danger" (click)="delete(product)">Delete</button>
+                                     </div>
+                                </div>
+                            </div>
+    </div>
+    </div>
+    </section>
